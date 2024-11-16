@@ -1,0 +1,3 @@
+RewriteEngine On 
+RewriteCond %{HTTP_HOST} ^(www\.)?[^.]+\lsv\.jp$ [NC]
+RewriteRule .* http://www.hodzue.jp%{REQUEST_URI} [R=301,L]

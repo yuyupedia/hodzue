@@ -1,0 +1,15 @@
+{{ define "main" }}
+	<main>
+    <h3>latest thoughts<span class="headingDescription">最近の記事</span></h3>
+    <ul class="recentPostList">
+      {{ range first 3 (where site.RegularPages "Section" "post") }}
+        <li class="recentPostList__item">
+          <span class="recentPostList__title"><a href="{{ .Permalink }}">{{ .Title }}</a></span>
+          <span class="recentPostList__date">{{ .Date.Format "2006-01-02" }}</span>
+        </li>
+      {{ end }}
+    </ul>
+    <h3>about<span class="headingDescription">このサイトについて</span></h3>
+    {{ with .Site.GetPage "page" "about.md" }}{{ .Content }}{{ end }}
+	</main>
+{{ end }}

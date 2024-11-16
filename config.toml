@@ -1,0 +1,24 @@
+baseURL = "https://hodzue.jp/"
+languageCode = "ja_JP"
+title = "my own notebook"
+theme = "blank"
+HasCJKLanguage = true
+enableEmoji = true
+paginate = 100
+
+[[menu.main]]
+  name = "thoughts"
+  url = "/post/"
+  weight = "3"
+
+[[menu.main]]
+  name = "memo"
+  url = "/memo/"
+  weight = "4"
+
+[markup.goldmark.renderer]
+  unsafe= true
+
+[blackfriday]
+  hrefTargetBlank = true
+  canonifyURLs = true

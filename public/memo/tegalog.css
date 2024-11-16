@@ -1,0 +1,684 @@
+/* reset */
+/* https://coliss.com/articles/build-websites/operation/css/a-more-modern-css-reset.html */
+/* box-sizing: border-box;を設定 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+ 
+/* フォントサイズの拡大を防ぐ */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+ 
+/* デフォルトのマージンを削除、作成するCSSの制御を改善するため */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+ 
+/* リストのスタイルを削除、これはデフォルトのスタイルが削除されることを示唆します */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+ 
+/* bodyのデフォルトを設定 */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+ 
+/* 見出しやインタラクティブ要素のline-heightを設定 */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+ 
+/* 見出しのテキスト折り返しをbalanceに設定 */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+ 
+/* classを持たないa要素はデフォルトのスタイルを継承 */
+/* 削除 */
+ 
+/* 画像の扱いを簡単にする */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+ 
+/* inputやbuttonなどのfontは継承 */
+input, button,
+textarea, select {
+  font: inherit;
+}
+ 
+/* rows属性のないtextareasが小さくならないようにする */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+ 
+/* アンカーされている要素には余分なスクロールマージンが必要 */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+/* カラースキーム */
+/* https://stephango.com/flexoki */
+
+/* base tones */
+:root {
+  --black: #100F0F;
+  --base-950: #1C1B1A;
+  --base-900: #282726;
+  --base-850: #343331;
+  --base-800: #403E3C;
+  --base-700: #575653;
+  --base-600: #6F6E69;
+  --base-500: #878580;
+  --base-300: #B7B5AC;
+  --base-200: #CECDC3;
+  --base-150: #DAD8CE;
+  --base-100: #E6E4D9;
+  --base-50: #F2F0E5;
+  --paper: #FFFCF0;
+}
+
+/* dark accent colors */
+:root {
+  --red-600: #AF3029;
+  --orange-600: #BC5215;
+  --yellow-600: #AD8301;
+  --green-600: #66800B;
+  --cyan-600: #24837B;
+  --blue-600: #205EA6;
+  --purple-600: #5E409D;
+  --magenta-600: #A02F6F;
+}
+
+/* light accent colors */
+:root {
+  --red-400: #D14D41;
+  --orange-400: #DA702C;
+  --yellow-400: #D0A215;
+  --green-400: #879A39;
+  --cyan-400: #3AA99F;
+  --blue-400: #4385BE;
+  --purple-400: #8B7EC8;
+  --magenta-400: #CE5D97;
+}
+
+/* mapping */
+body {
+  --tx: var(--black);
+  --tx-2: var(--base-600);
+  --tx-3: var(--base-300);
+  --ui-3: var(--base-200);
+  --ui-2: var(--base-150);
+  --ui: var(--base-100);
+  --bg-2: var(--base-50);
+  --bg: var(--paper);
+  --re: var(--red-600);
+  --or: var(--orange-600);
+  --ye: var(--yellow-600);
+  --gr: var(--green-600);
+  --cy: var(--cyan-600);
+  --bl: var(--blue-600);
+  --pu: var(--purple-600);
+  --ma: var(--magenta-600);
+  --re-2: var(--red-400);
+  --or-2: var(--orange-400);
+  --ye-2: var(--yellow-400);
+  --gr-2: var(--green-400);
+  --cy-2: var(--cyan-400);
+  --bl-2: var(--blue-400);
+  --pu-2: var(--purple-400);
+  --ma-2: var(--magenta-400);
+}
+
+/* mapping on dark theme */
+body.dark {
+  --tx: var(--base-200);
+  --tx-2: var(--base-500);
+  --tx-3: var(--base-700);
+  --ui-3: var(--base-800);
+  --ui-2: var(--base-850);
+  --ui: var(--base-900);
+  --bg-2: var(--base-950);
+  --bg: var(--black);
+  --re: var(--red-400);
+  --or: var(--orange-400);
+  --ye: var(--yellow-400);
+  --gr: var(--green-400);
+  --cy: var(--cyan-400);
+  --bl: var(--blue-400);
+  --pu: var(--purple-400);
+  --ma: var(--magenta-400);
+  --re-2: var(--red-600);
+  --or-2: var(--orange-600);
+  --ye-2: var(--yellow-600);
+  --gr-2: var(--green-600);
+  --cy-2: var(--cyan-600);
+  --bl-2: var(--blue-600);
+  --pu-2: var(--purple-600);
+  --ma-2: var(--magenta-600);
+}
+
+/*
+- bg: main background
+- bg-2: secondary background
+- ui: borders
+- ui-2: hovered borders
+- ui-3: active borders
+- tx-3: faint text
+- tx-2: muted text
+- tx: primary text
+- re: error text
+- or: warning text
+- gr: success text
+- cy: active states
+- bl: links
+*/
+
+
+/* variables */
+:root {
+  --f-tiny: 0.75rem; /* ↓type scale */
+  --f-small: 0.875rem;
+  --f-dafault: 1rem;
+  --f-large: 1.25rem;
+  --f-huge: 1.625rem;
+  --height-small: 1.25; /* ↓line height */
+  --height-default: 1.8;
+  --spacing-tiny: 0.25rem; /* ↓spacing */
+  --spacing-smaller: 0.5rem;
+  --spacing-small: 0.875rem;
+  --spacing-default: calc(1rem * 1.8);
+  --spacing-large: 2.5rem;
+  --spacing-huge: 4rem;
+  --spacing-horizontal: 2rem;
+}
+
+
+/* font */
+
+/* 約猫 */
+@font-face {
+  font-family: "YakuCaltGothic";
+  src: url("../font/YakuCalt/YakuCaltGothic-R.woff") format("woff"), url("../font/YakuCalt/YakuCaltGothic-R.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plusquam Sans";
+  src: url("../font/PlusquamSans/PlusquamSans.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plusquam Sans";
+  src: url("../font/PlusquamSans/PlusquamSans-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* base */
+
+html {
+  font-variant-ligatures: contextual;
+  -moz-font-feature-settings: "calt";
+  -webkit-font-feature-settings: "calt";
+  font-feature-settings: "calt";
+}
+
+body {
+  font-family: "YakuCaltGothic", "Plusquam Sans", -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+  font-size: 1.0625rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Plusquam Sans", -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+}
+
+a {
+  text-decoration: underline;
+}
+
+.url {
+  word-break: break-all;
+}
+
+
+/* style */
+
+body {
+  background-color: var(--bg);
+  color: var(--tx);
+}
+
+a {
+  color: var(--bl);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.125em;
+}
+
+a:hover,
+a:active {
+  color: var(--bl-2);
+}
+
+.wrapper {
+  display: grid;
+  background-color: var(--bg);
+  grid-template-columns: repeat(auto-fill, 1em);
+  justify-content: center;
+  margin-inline: auto;
+  width: min(40em, 95vw);
+  grid-template-rows: auto 1fr auto;
+  row-gap: 2rem;
+  min-height: 100%;
+  padding: 1rem 0;
+}
+
+.wrapper > * {
+  grid-column: 1 / -1;
+}
+
+/* --------------- header ----------------- */
+header {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr auto auto;
+  column-gap: .75rem;
+  align-items: center;
+}
+
+header a {
+  color: var(--tx);
+}
+
+header a:hover,
+header a:active {
+  color: var(--tx-2);
+}
+
+
+.header__siteName {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.header__siteName a {
+  text-decoration: none;
+}
+
+.header__siteName a:hover,
+.header__siteName a:active {
+  text-decoration: underline;
+  text-decoration-thickness: unset;
+}
+
+/*
+ul.header__Nav {
+  grid-column: 2;
+  grid-row: 1;
+  list-style: none;
+  display: flex;
+  justify-content: left;
+  gap: .5em;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  font-size: .875rem;
+}
+
+ul.header__Nav > li:not(:first-child)::before {
+  content: "|";
+  padding-right: .5em;
+}
+*/
+
+span#admin {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+}
+
+span#theme-switch {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+}
+
+#admin svg,
+#theme-switch svg {
+  fill: var(--tx);
+}
+
+.quickpost {
+  grid-column: 1 / 4;
+  grid-row: 2;
+}
+
+/* --------------- main ----------------- */
+
+main {
+  line-height: var(--height-default);
+}
+
+.situation {
+  margin-bottom: var(--spacing-default);
+  padding: .5rem;
+  background-color: var(--bg-2);
+  font-size: var(--f-small);
+}
+
+.situation:empty {
+  display: none;
+}
+
+.situation-catname,
+.situation-tagname {
+  font-weight: 700;
+}
+
+body:not(.onelog) .forOnePost {
+  display: none;
+}
+
+body.onelog .forPostList {
+  display: none;
+}
+
+body.selected-cat .postList__category {
+  display: none;
+}
+
+.article {
+  padding-bottom: var(--spacing-horizontal);
+  margin-bottom: var(--spacing-horizontal);
+  border-bottom: var(--ui-3) 1px solid;
+}
+
+.article__content .taglink {
+  display: inline-block;
+  word-break: break-all;
+}
+
+.readmorebutton {
+  display: inline-block;
+  color: var(--bl);
+}
+
+.readmoreclose {
+  display: block;
+}
+
+.article__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: .5em;
+  margin: 0 0 .75rem .1rem;
+  font-size: var(--f-small);
+  color: var(--tx-3);
+  vertical-align: baseline;
+}
+
+.article__meta a {
+  text-decoration: none;
+  color: var(--tx-3);
+}
+
+.article__meta a:hover {
+  text-decoration: underline;
+}
+
+.article__category {
+  flex-grow: 1;
+}
+
+.categorylink {
+  display: inline;
+  margin-right: .5em;
+}
+
+.categorylink::before {
+  content: '#';
+}
+
+.article__editlink {
+  flex-basis: content;
+}
+
+.article__editlink a {
+  text-decoration: underline;
+}
+
+.article__postID {
+  flex-basis: content;
+}
+
+.article__date {
+  flex-basis: content;
+  white-space: nowrap;
+}
+
+.article__content img {
+  margin: var(--spacing-default) auto 0 auto;
+}
+
+.article__content img+* {
+  margin-top: var(--spacing-default);
+}
+
+.article__content img+br {
+  display: none;
+}
+
+.deco-figcaption {
+  margin-top: calc(var(--spacing-default) / 8);
+  margin-bottom: var(--spacing-default);
+  font-size: var(--f-small);
+  color: var(--tx-2);
+  display: block;
+  text-align: center;
+}
+
+.deco-figcaption+br {
+  display: none;
+}
+
+iframe.embeddedmovie { /* YouTube埋め込みのアスペクト比をいい感じにする */
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+.decorationL + br {
+  display: none;
+}
+
+/* --------------- aside ----------------- */
+
+.pagelinks {
+  display: flex;
+  justify-content: center;
+  gap: .5em;
+}
+
+.prevlink {
+  order: 1;
+}
+
+.nextlink {
+  order: 3;
+}
+
+.linkseparator {
+  order: 2;
+}
+
+body.onelog .prevlink {
+  order: 3;
+}
+
+body.onelog .nextlink {
+  order: 1;
+}
+
+/*
+.pagenums a {
+  margin: 0 .5em;
+}
+
+a.pagenumhere {
+  text-decoration: none;
+}
+*/
+
+
+/* --------------- footer ----------------- */
+
+footer {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  font-size: var(--f-small);
+}
+
+.footer__copyright > a {
+  margin: 0 .5em;
+}
+
+@media only screen and (max-width:599px) {
+  footer {
+    grid-template-columns: none;
+    grid-template-rows: auto auto;
+    row-gap: var(--spacing-small);
+  }
+
+  .footer__copyright {
+    font-size: var(--f-tiny);
+  }
+}
+
+
+/* ---------------- QUICKPOST ---------------- */
+.quickpost {
+  background-color: var(--bg-2);
+  padding: .25rem;
+  text-align: left;
+}
+
+/* Q:引用 */
+.decorationQ {
+  display: block;
+  /* ↑必須 */
+  margin: var(--spacing-default) 0 var(--spacing-default) var(--spacing-small);
+  padding-left: 1rem;
+  border-left-style: solid;
+  border-left-width: .125rem;
+  border-color: var(--ye);
+}
+
+.decorationQ::before,
+.decorationQ::after {
+  content: '';
+  /* 標準で付加されてしまう引用符を無効にする */
+}
+
+.decorationQ+br {
+  display: none;
+}
+
+blockquote.twitter-tweet {
+  border: 1px dashed var(--ui-3);
+  border-radius: 9px;
+  margin: 0.3em 0;
+  padding: 1em;
+  font-size: var(--f-small);
+  color: var(--tx-3);
+}
+
+/* QUICKPOST入力欄 */
+
+.quickpost {
+  margin-top: 1rem;
+}
+
+.quickpost form {
+  padding: 10px;
+}
+textarea.tegalogpost {
+  width: 100%;
+  border: 1px solid var(--ui-3);
+  padding: 8px;
+  line-height: 1.6em;
+}
+.quickpost p.line-textarea {
+  margin: 0;
+}
+.quickpost p.line-control {
+  margin: 10px 0 0;
+}
+.quickpost input.postbutton {
+  background: var(--bl);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 15px;
+  cursor: pointer;
+  transition: .3s;
+  font-size: .875rem;
+}
+.quickpost input.postbutton:hover {
+  background: var(--bl-2);
+}
+.decoBtns input[type=button] {
+  border-radius: 3px;
+  border: 1px solid var(--ui-3);
+  background: white;
+  margin: 0 2px 10px;
+  padding: 3px 5px;
+  font-size: .875rem;
+}
+span.catChecks label {
+  margin-right: 5px;
+  font-size: var(--f-small);
+}
+
+/* QUICKPOSTプレースホルダ */
+textarea.tegalogpost:placeholder-shown {
+  color: var(--tx-3);
+}
+
+textarea.tegalogpost:focus:placeholder-shown {
+  color: var(--tx-3);
+}
+
+@media all and (max-width: 800px) {
+  textarea.tegalogpost {
+    font-size: 16px;
+    padding: 0.4em;
+  }
+}

@@ -1,0 +1,16 @@
+ISBN = 9784065177167
+Title = "＃柚莉愛とかくれんぼ"
+Author = "真下 みこと"
+hanmotoURL = "https://www.hanmoto.com/bd/isbn/9784065177167"
+CoverURL = "https://www.hanmoto.com/bd/img/9784065177167_600.jpg"
+Publisher = "講談社"
+PublicationDate = "2020-02-12"
+Description = "アイドルの炎上、ファンの暴走、ネット民の情報拡散ーー今読むべきSNS狂騒曲（ミステリー）！"
+
+[[Stores]]
+Name = "honto"
+URL = "https://honto.jp/netstore/pd-book_30081874.html"
+
+[[Stores]]
+Name = "Amazon"
+URL = "https://www.amazon.co.jp/dp/4065177162"

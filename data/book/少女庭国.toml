@@ -1,0 +1,16 @@
+ISBN = 9784150313821
+Title = "〔少女庭国〕"
+Author = "矢部 嵩"
+hanmotoURL = "https://www.hanmoto.com/bd/isbn/9784150313821"
+CoverURL = "https://www.hanmoto.com/bd/img/9784150313821_600.jpg"
+Publisher = "早川書房"
+PublicationDate = "2019-06-20"
+Description = "中3の羊歯子が受ける卒業試験はn-m=1。扉を開けると別の少女、次の扉にも少女、扉を開けるたびに無限に増え……"
+
+[[Stores]]
+Name = "honto"
+URL = "https://honto.jp/netstore/pd-book_29657769.html"
+
+[[Stores]]
+Name = "Amazon"
+URL = "https://www.amazon.co.jp/dp/4150313822"

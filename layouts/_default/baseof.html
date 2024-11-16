@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{{ if and (eq .Section "post") (eq .Kind "section") }}thoughts{{ else }}{{ .Title }}{{ end }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
+	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+	{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+  {{- $style := resources.Get "css/style.css" | minify -}}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
+	{{ with .OutputFormats.Get "RSS" -}}
+		{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
+	{{- end }}
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}koibumi_app/koibumi.css">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}newiine_app/newiine.css">
+</head>
+<body>
+  <div class="wrapper">
+	  {{ partial "header" . }}
+	  {{ block "main" . }}{{ end }}
+	  {{ partial "footer" . }}
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="{{ .Site.BaseURL }}koibumi_app/koibumi.js"></script>
+  <script src="{{ .Site.BaseURL }}newiine_app/newiine.js"></script>
+</body>
+</html>

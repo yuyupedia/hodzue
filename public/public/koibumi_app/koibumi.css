@@ -1,0 +1,206 @@
+@charset "UTF-8";
+
+/* --------------------------------------------------
+個人サイト向けひとことフォーム コイブミ Ver1.3.1
+製作者    ：ガタガタ
+サイト    ：https://do.gt-gt.org/
+ライセンス：MITライセンス
+全文      ：https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license
+公開日    ：2020.09.13
+最終更新日：2022.05.11
+このプログラムはどなたでも無償で利用・複製・変更・
+再配布および複製物を販売することができます。
+ただし、上記著作権表示ならびに同意意志を、
+このファイルから削除しないでください。
+-------------------------------------------------- */
+
+div#koibumi_wrap {
+  max-width: 100%;
+  position: relative;
+}
+
+div#koibumi_wrap p {
+  margin-bottom: 0;
+}
+
+/* お礼メッセージを上にポップアップする場合ここから */
+div#koibumi_thanks {
+  width: 300px;
+  max-width: 100%;
+  background: white;
+  border: 1px solid #efefef;
+  border-radius: 10px;
+  padding: 10px;
+  filter: drop-shadow(0 2px 8px #cccccc7d);
+  position: absolute;
+  bottom: 140%;
+  opacity: 0;
+  animation-name: koibumi_thanks-up;
+  animation-duration: .5s;
+  animation-fill-mode: both;
+}
+
+div#koibumi_thanks:after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-bottom: 20px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid white;
+    position: absolute;
+    left: 20px;
+}
+/* お礼メッセージを上にポップアップする場合ここまで */
+
+/* お礼メッセージを下にポップアップする場合ここから */
+/*
+div#koibumi_thanks {
+    width: 300px;
+    max-width: 100%;
+    background: white;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+    padding: 10px;
+    filter: drop-shadow(0 2px 8px #cccccc7d);
+    position: absolute;
+    top: 140%;
+    opacity: 0;
+    animation-name: koibumi_thanks-down;
+    animation-duration: .5s;
+    animation-fill-mode: both;
+}
+
+div#koibumi_thanks:after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-top: 20px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid white;
+    position: absolute;
+    bottom: calc(100% - 1px);
+    left: 20px;
+} */
+
+/* お礼メッセージを下にポップアップする場合ここまで */
+div#koibumi_form {
+  width: 100%;
+  overflow: hidden;
+}
+
+input#koibumi_text {
+  border: 1px solid #5B534D;
+  box-sizing: border-box;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  font-family: inherit;
+}
+textarea#koibumi_text {
+  font-size: .875rem;
+  padding: 10px;
+  line-height: 1.4;
+  width: 100%;
+  margin: 0 10px 0 0;
+  border: 1px solid #BCC3BB;
+  border-radius: 3px;
+  font-family: inherit;
+}
+input#koibumi_text:focus,
+textarea#koibumi_text:focus,
+button#koibumi_btn:focus {
+  outline: none;
+}
+button#koibumi_btn {
+  border: none;
+  cursor: pointer;
+  font-size: .875rem;
+  padding: 5px;
+  line-height: 1em;
+  width: 65px;
+  background: #7F7566;
+  color: white;
+  transition: .3s;
+  margin: auto 0 0;
+  height: 2rem;
+  text-align: center;
+  border-radius: 3px;
+}
+
+button#koibumi_btn:hover {
+  background: #C99E60;
+}
+
+div#koibumi_wrap p.attention {
+  font-size: .75rem;
+  color: #A9AFA8;
+}
+
+.koibumifadeout {
+  animation : koibumifadeout 1s !important;
+  animation-fill-mode: both;
+}
+
+p#koibumi_alert {
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 3px;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    top: 100%;
+    background: #fcfcfc;
+    box-shadow: 0 2px 6px #00000014;
+}
+p#koibumi_alert.success {
+    background: #d4effc;
+    color: #0f286a;
+}
+p#koibumi_alert.alert {
+    background: #ffe2e5;
+    color: #610b34;
+}
+
+div#koibumi_thanks p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+div#koibumi_thanks img {
+  max-width: 100%;
+}
+
+@keyframes koibumifadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes koibumi_thanks-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes koibumi_thanks-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

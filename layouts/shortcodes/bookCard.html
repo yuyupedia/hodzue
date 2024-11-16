@@ -1,0 +1,25 @@
+{{ $x := string (.Get 0) }}
+{{ with index .Site.Data.book $x }}
+<section class="bookCard">
+  <h1 class="bookCard__title">{{ .Title }}</h1>
+  <figure class="bookCard__cover">
+    <img src="{{ .CoverURL }}">
+  </figure>
+  <div class="bookCard__content">
+    <dl class="bookCard__info">
+      <dt>著者:</dt><dd>{{ .Author }}</dd>
+      <dt>出版社:</dt><dd>{{ .Publisher }}</dd>
+      <dt>リンク:</dt>
+      <dd>
+        {{ range .Stores }}
+        <span class="bookCard__storeLink">
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        </span>
+        {{ end }}
+      </dd>
+    </dl>
+    <p class="bookCard__description">{{ .Description }}</p>
+  </div>
+  <figcaption>引用元: <a href="{{ .hanmotoURL }}">版元ドットコム</a></figcaption>
+</section>
+{{ end }}

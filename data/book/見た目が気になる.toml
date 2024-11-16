@@ -1,0 +1,16 @@
+ISBN = 9784309617336
+Title = "見た目が気になる"
+Author = "河出書房新社編"
+hanmotoURL = "https://www.hanmoto.com/bd/isbn/9784309617336"
+CoverURL = "https://www.hanmoto.com/bd/img/9784309617336_600.jpg"
+Publisher = "河出書房新社"
+PublicationDate = "2021-08-19"
+Description = "人はどうして見た目が気になるのか。周囲や社会の価値観にとらわれず「自分らしさ」を見出すために、モデルや社会学者、漫画家など26人が「見た目」との向き合い方を考える。"
+
+[[Stores]]
+Name = "honto"
+URL = "https://honto.jp/netstore/pd-book_31047741.html"
+
+[[Stores]]
+Name = "Amazon"
+URL = "https://www.amazon.co.jp/dp/4309617336"

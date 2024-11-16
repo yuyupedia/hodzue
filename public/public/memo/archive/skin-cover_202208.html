@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=[[CHARCODE]]">
+    <title>[[FREE:TITLE:MAIN]]</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="alternate" type="application/rss+xml" title="[[FREE:TITLE:MAIN]]RSSfeed" href="[[RSS:URL:FULL]]">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="tegalog.min.css">
+  </head>
+  <body class="[[SITUATION:CLASS]]">
+    <script>
+      if (!window.localStorage || !window.localStorage.getItem('hodzue-memo-theme')) {
+          window.isDark = 'light' === 'dark';
+      } else {
+          window.isDark = (window.localStorage && window.localStorage.getItem('hodzue-memo-theme')) === 'dark';
+      }
+      window.isDark && document.body.classList.add('dark-theme');
+    </script>
+    <div class="wrapper">
+      <div class="Login-Required quickpost">
+        [[QUICKPOST]]
+      </div>
+      <header class="header">
+        <a href="https://hodzue.lsv.jp/memo/"  class="headerLogo">
+          <img src="../static/img/icon-shiba_50x50.jpeg" class="headerLogo__icon">
+          <span class="headerLogo__text">[[FREE:TITLE:MAIN]]</span>
+        </a>
+        <nav class="headerMenu">
+          <span class="headerMenu__item Login-Required"><a href="[[NEWPOST:URL]]">new post</a></span>
+          <span class="headerMenu__item Login-Required"><a href="[[ADMIN:URL]]">admin</a></span>
+          <span class="headerMenu__item theme-switch"><a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/></svg></a></span>
+        </nav>
+      </header>
+      <main class="main">
+        [[SITUATION:HTML]]
+        [[TEGALOG]]
+      </main>
+      <aside class="aside">
+        <nav class="pagenation">
+          <p class="pagelinks">[[NAVI:PREVNEXT]]</p>
+        </nav>
+      </aside>
+      <footer class="footer">
+        <p class="footer__copyright">©2021-[[INFO:LASTUPDATE:Y]]<a href="https://hodzue.lsv.jp/memo/">[[FREE:TITLE:MAIN]]</a></p>
+        <p class="footer__version">[[VERSION]].</p>
+      </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="../static/js/blog.min.js"></script>
+  </body>
+</html>

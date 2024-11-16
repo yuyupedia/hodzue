@@ -1,0 +1,16 @@
+ISBN = 9784309208381
+Title = "だれも死なない日"
+Author = "ジョゼ・サラマーゴ"
+hanmotoURL = "https://www.hanmoto.com/bd/isbn/9784309208381"
+CoverURL = "https://www.hanmoto.com/bd/img/9784309208381_600.jpg"
+Publisher = "河出書房新社"
+PublicationDate = "2021-09-24"
+Description = "新年の始まり以降、この国ではだれも死ななくなった。悲喜こもごもの事態の中、テレビ局の会長のもとに紫色の封書が届き…。大胆な発想で知られるノーベル賞作家が、「死」をテーマに描いたスリリングな物語。"
+
+[[Stores]]
+Name = "honto"
+URL = "https://honto.jp/netstore/pd-book_31098149.html"
+
+[[Stores]]
+Name = "Amazon"
+URL = "https://www.amazon.co.jp/dp/430920838X"

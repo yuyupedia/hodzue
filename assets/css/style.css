@@ -1,0 +1,620 @@
+/* reset */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+
+/* font */
+
+@font-face {
+  font-family: "YakuCaltGothic";
+  src: url("../font/YakuCalt/YakuCaltGothic-R.woff") format("woff"), url("../font/YakuCalt/YakuCaltMincho-R.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans JP Subset";
+  src: url("../font/NotoSansJP/NotoSansJP-Subset-Regular.woff") format("woff"), url("../font/NotoSansJP/NotoSansJP-Subset-Regular.woff2") format("woff2"), url("../font/NotoSansJP/NotoSansJP-Subset-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Sans JP Subset";
+  src: url("../font/NotoSansJP/NotoSansJP-Subset-Bold.woff") format("woff"), url("../font/NotoSansJP/NotoSansJP-Subset-Bold.woff2") format("woff2"), url("../font/NotoSansJP/NotoSansJP-Subset-Bold.otf") format("opentype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hummingbird Subset";
+  src: url("../font/Hummingbird/HummingbirdSubset.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plusquam Sans";
+  src: url("../font/PlusquamSans/PlusquamSans.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plusquam Sans";
+  src: url("../font/PlusquamSans/PlusquamSans-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* variables */
+
+:root {
+  /* カラーパレット */
+  --color-palette-01: #E5E4E2;
+  --color-palette-02: #CBDCD8;
+  --color-palette-03: #A29772;
+  --color-palette-04: #BCC3BB;
+  --color-palette-05: #F6F6D5;
+  --color-palette-06: #D2E0AC;
+  --color-palette-07: #E0C671;
+  --color-palette-08: #C99E60;
+  --color-palette-09: #7F7566;
+  --color-palette-10: #5B534D;
+  /* color */
+  --color-text-base: var(--color-palette-10);
+  --color-text-darker: #36312E;
+  --color-text-note: #A9AFA8;
+  --color-text-light: #A9AFA8;
+  --color-text-link: #61A1C9;
+  --color-text-strong: var(--color-palette-08);
+  --color-bg-base: var(--color-palette-06);
+  --color-bg-wrapper: #FFF;
+  --color-bg-box: var(--color-palette-01);
+  --color-bg-strong: var(--color-palette-07);
+  /* ↓type scale */
+  --f-tiny: 0.75rem;
+  --f-small: 0.875rem;
+  --f-dafault: 1.0625rem;
+  --f-large: 1.25rem;
+  --f-huge: 1.625rem;
+  /* ↓line height */
+  --height-small: 1.25;
+  --height-default: 1.8;
+  /* ↓spacing */
+  --spacing-tiny: 0.25rem;
+  --spacing-smaller: 0.5rem;
+  --spacing-small: 0.875rem;
+  --spacing-default: calc(1rem * 1.8);
+  --spacing-large: 2.5rem;
+  --spacing-huge: 4rem;
+  --spacing-horizontal: 2rem;
+}
+
+/* base */
+
+html {
+  font-variant-ligatures: contextual;
+  -moz-font-feature-settings: "calt";
+  -webkit-font-feature-settings: "calt";
+  font-feature-settings: "calt";
+  font-size: var(--f-dafault);
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-base);
+  font-family: "YakuCaltGothic", "Noto Sans JP Subset", "Plusquam Sans", -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Noto Sans JP Subset", "Plusquam Sans", "Zen Kaku Gothic New", -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+  line-height: var(--height-default);
+}
+
+h3 {
+  border-bottom: 2px solid var(--color-palette-01);
+  margin-bottom: var(--spacing-small);
+}
+
+h3::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: var(--color-palette-07);
+  position: relative;
+  top: 2px;
+}
+
+h3:not(:first-child) {
+  margin-top: var(--spacing-huge);
+}
+
+.headingDescription {
+  font-weight: normal;
+  font-size: 75%;
+  color: var(--color-text-light);
+  padding-left: var(--spacing-small);
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.125em;
+  opacity: 1;
+  transition: opacity .15s ease-in;
+  color: var(--color-text-link);
+}
+
+a:hover,
+a:focus {
+  opacity: .5;
+  transition: opacity .15s ease-in;
+}
+
+a:active {
+  opacity: .8;
+  transition: opacity .15s ease-out;
+}
+
+p {
+  margin-bottom: var(--spacing-default);
+}
+
+.url {
+  word-break: break-all;
+}
+
+.wrapper {
+  display: grid;
+  background-color: var(--color-bg-wrapper);
+  grid-template-columns: repeat(auto-fill, 1em);
+  justify-content: center;
+  margin-inline: auto;
+  width: min(44em, 95%);
+  padding: 0 2rem;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 4rem;
+  min-height: 100%;
+}
+
+.wrapper > * {
+  grid-column: 1 / -1;
+}
+
+@media all and (max-width: 768px) {
+  .wrapper {
+    padding-left: .875rem;
+    padding-right: .875rem;
+  }
+}
+
+/* header */
+
+header {
+  text-align: center;
+  background: url(../img/yellow-wildflower-leaves-divider_cropped.png) no-repeat top/400px;
+}
+
+@media all and (max-width: 560px) {
+  header {
+    background-size: 100%;
+  }
+}
+
+.header__siteName {
+  font-family: "Hummingbird Subset";
+  font-size: 4rem;
+  font-weight: 400;
+  z-index: auto;
+  margin: 40px 0 .25rem;
+  line-height: 1;
+}
+
+.header__siteName > a {
+  display: inline-block;
+  color: var(--color-text-darker);
+  text-decoration: none;
+}
+
+ul.headerNav {
+  position: relative;
+  z-index: 10;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: .5em;
+  font-size: .875rem;
+}
+
+ul.headerNav > li:not(:first-child)::before {
+  content: "|";
+  padding-right: .5em;
+}
+
+.headerNav__item a {
+  display: inline-block;
+}
+
+/* main */
+
+main {
+  line-height: var(--height-default);
+}
+
+main h1:has(+ h2),
+main h2:has(+ h3),
+main h3:has(+ h4),
+main h1:has(+ h4),
+main h2:has(+ h4) {
+  margin-bottom: 0 !important; 
+}
+
+main h1 + h2,
+main h2 + h3,
+main h3 + h4,
+main h1 + h4,
+main h2 + h4,
+main h3 + h4 {
+  margin-top: 1em !important;
+}
+
+main ul,
+main ol {
+  margin-bottom: var(--spacing-default);
+}
+
+main ul {
+  padding-left: 1ch;
+}
+
+main ol {
+  padding-left: 2ch;
+}
+
+main ul li {
+  list-style-type: none;
+  position: relative;
+}
+
+main ul li::before {
+  content: "\2010";
+  position: absolute;
+  right: 100%;
+  margin-right: .25em;
+}
+
+main ul ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+figure {
+  margin: var(--spacing-default) 0;
+}
+
+figure.image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+figure.image img.aspect-16x9 { width: 100%; }
+
+figure.image img.aspect-5x3 { width: 96.825%; }
+
+figure.image img.aspect-3x2 { width: 91.856%; }
+
+figure.image img.aspect-4x3 { width: 86.602% }
+
+figure.image img.aspect-1x1 { width: 75%; }
+
+figure.image img.aspect-3x4 { width: 64.952%; }
+
+figure.image img.aspect-2x3 { width: 61.237%; }
+
+figure.image img.aspect-3x5 { width: 58.095%; }
+
+figure.image img.aspect-9x16 { width: 56.25%; }
+
+figure.image img.aspect-46ban { width: 62.37%; }
+
+figcaption {
+  text-align: center;
+  font-size: var(--f-small);
+  color: var(--color-text-note);
+}
+
+/* section.bookCard */
+
+.bookCard {
+  padding: 1em;
+  margin: var(--spacing-default) 0;
+  background-color: var(--color-bg-box);
+  display: grid;
+  grid-template-columns: 33% 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 1em;
+}
+
+@media all and (max-width: 560px) {
+  .bookCard {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+  }
+}
+
+h1.bookCard__title {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  font-size: var(--f-dafault);
+  margin-bottom: 0;
+}
+
+@media all and (max-width: 560px) {
+  h1.bookCard__title {
+    grid-column: 1 / 2;
+  }
+}
+
+figure.bookCard__cover {
+  margin: 0;
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+}
+
+@media all and (max-width: 560px) {
+  figure.bookCard__cover {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+}
+
+figure.bookCard__cover img {
+  margin: 0 auto;
+}
+
+@media all and (max-width: 560px) {
+  figure.bookCard__cover img {
+    /* 四六判のサイズをだいたい2x3とみなして */
+    width: 61.237%;
+  }
+}
+
+.bookCard__content {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  font-size: var(--f-small);
+}
+
+@media all and (max-width: 560px) {
+  .bookCard__content {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+}
+
+dl.bookCard__info {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+  border-left: .125em solid;
+  padding-left: .875em;
+}
+
+dl.bookCard__info dt {
+  width: 4em;
+}
+
+dl.bookCard__info dd {
+  width: calc(100% - 4em);
+}
+
+dl.bookCard__info span.bookCard__storeLink:not(:first-of-type)::before{
+  content: "| ";
+}
+
+p.bookCard__description {
+  margin-bottom: 0;
+}
+
+.bookCard figcaption {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  font-size: var(--f-tiny);
+  color: var(--color-text-base);
+  text-align: right;
+}
+
+@media all and (max-width: 560px) {
+  .bookCard figcaption {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+}
+
+.alert,
+.alert--netabare {
+  background-color: var(--color-palette-05);
+  color: var(--color-text-darker);
+  padding: 1em;
+  padding-left: .875em;
+  margin: var(--spacing-default) 0;
+  border-left: .125em solid var(--color-palette-09);
+}
+
+.alert p,
+.alert--netabare p {
+  margin: 0;
+}
+
+blockquote {
+  margin: var(--spacing-default) 0 var(--spacing-default) .875rem;
+  padding-left: 1rem;
+  border-left: .125rem solid var(--color-palette-07);
+  }
+
+blockquote p:first-of-type {
+  margin-top: 0;
+}
+
+blockquote p:last-of-type {
+  margin-bottom: 0;
+}
+
+cite {
+  display: block;
+  margin-top: .5em;
+  font-size: var(--f-tiny);
+  font-style: normal;
+}
+
+cite a{
+  color: var(--color-text-base);
+}
+
+cite::before {
+  content: '—';
+}
+
+.recentPostList__date,
+.articleList__date {
+  font-size: var(--f-small);
+  color: var(--color-text-note);
+  margin-left: .25rem;
+  white-space: nowrap;
+}
+
+main h1 {
+  font-size: 2em;
+  margin-bottom: 1.5em;
+}
+
+h1.singlePost__title {
+  margin-bottom: .5rem;
+  line-height: 1.25;
+}
+
+.singlePost__meta {
+  font-family: "Noto Sans JP Subset", "Plusquam Sans", "Zen Kaku Gothic New", -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+  font-size: var(--f-small);
+  color: var(--color-text-note);
+  text-align: right;
+  margin-bottom: 2.5rem;
+}
+
+.singlePost__tag a {
+  color: var(--color-text-note);
+}
+
+.singlePost__tag + .singlePost__tag {
+  margin-left: .5em;
+}
+
+.singlePost__date {
+  margin-left: .75em;
+}
+
+article h2 {
+  font-size: 1.375rem;
+}
+
+article h2,
+article h3 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+article h4 {
+  margin-bottom: .33em;
+}
+
+/* いいねボタン */
+
+section.iine {
+  display: flex;
+  margin-bottom: var(--spacing-default);
+}
+
+button.newiine_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+section.iine--singlePost {
+  justify-content: flex-end;
+}
+
+/* footer */
+
+footer {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.footer__copyright {
+  font-size: var(--f-small);
+  margin-bottom: 0;
+}
+
+.footer__copyright a {
+  margin-left: .5em;
+}
+
+.scrollToTop {
+  position: fixed;
+  bottom: .75rem;
+  right: 1rem;
+  z-index: 1;
+}
+
+.scrollToTop__img {
+  width: 24px;
+  height: auto;
+}

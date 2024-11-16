@@ -1,0 +1,16 @@
+ISBN = 9784839977665
+Title = "ざっくりつかむ CSS設計"
+Author = "高津戸 壮"
+hanmotoURL = "https://www.hanmoto.com/bd/isbn/9784839977665"
+CoverURL = "https://www.hanmoto.com/bd/img/9784839977665_600.jpg"
+Publisher = "マイナビ出版"
+PublicationDate = "2021-12-23"
+Description = "本書は、これからWebサイト制作・開発の現場に入る人や、現場で悩んでいる人を対象に、CSSの設計についてわかりやすく解説するものです。"
+
+[[Stores]]
+Name = "honto"
+URL = "https://honto.jp/netstore/pd-book_31322311.html"
+
+[[Stores]]
+Name = "Amazon"
+URL = "https://www.amazon.co.jp/dp/4839977666"

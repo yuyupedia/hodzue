@@ -1,0 +1,19 @@
+{{ define "main" }}
+	<main>
+		{{ if or .Title .Content }}
+		<div>
+			<h1>{{ if eq .Section "post" }}日常や考えごとの記録{{ else }}{{ .Title }}{{ end }}</h1>
+			{{ with .Content }}<div>{{ . }}</div>{{ end }}
+		</div>
+		{{ end }}
+
+    <ul class="articleList">
+		  {{ range .Paginator.Pages }}
+        <li class="articleList__item">
+          <span class="articleList__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+          <span class="articleList__date">{{ .Date.Format "2006-01-02" }}</span>
+        </li>
+      {{ end }}
+    </ul>
+	</main>
+{{ end }}

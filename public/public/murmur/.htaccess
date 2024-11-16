@@ -1,0 +1,6 @@
+DirectoryIndex tegalog.cgi
+
+<FilesMatch "psif\.cgi$|\.pl$|\.ini$|\.xml$">
+deny from all
+</FilesMatch>
+

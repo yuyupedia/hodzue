@@ -1,0 +1,16 @@
+ISBN = 9784478109816
+Title = "話すチカラ"
+Author = "齋藤 孝, 安住 紳一郎"
+hanmotoURL = "https://www.hanmoto.com/bd/isbn/9784478109816"
+CoverURL = "https://www.hanmoto.com/bd/img/9784478109816_600.jpg"
+Publisher = "ダイヤモンド社"
+PublicationDate = "2020-02-21"
+Description = "師弟関係にあって、日本屈指の話し手であるふたりが、「話すチカラ」について縦横無尽に語り尽くしました。"
+
+[[Stores]]
+Name = "honto"
+URL = "https://honto.jp/netstore/pd-book_30131431.html"
+
+[[Stores]]
+Name = "Amazon"
+URL = "https://www.amazon.co.jp/dp/4478109818"

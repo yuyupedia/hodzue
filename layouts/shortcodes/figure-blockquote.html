@@ -1,0 +1,8 @@
+<figure class="blockquote">
+  <blockquote cite="{{ .Get "url" }}">
+    {{ .Inner | markdownify }}
+  </blockquote>
+  <figcaption class="db mt1 f6 lh-copy">
+    <cite class="fs-normal">{{ with .Get "url" }}<a href="{{ . }}" class="ml0 mr0">{{ end }}{{ .Get "title" }}{{ with .Get "url" }}</a>{{ end }}</cite>
+  </figcaption>
+</figure>

@@ -1,0 +1,4 @@
+<figure class="image">
+  <img src="{{ .Get "src" }}" class="aspect-{{ .Get "aspect" }}">
+  {{ with .Inner }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>

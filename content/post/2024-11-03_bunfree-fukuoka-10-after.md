@@ -1,6 +1,6 @@
 ---
 title: "文学フリマ福岡10ありがとうございました"
-date: 2024-11-02T02:00+09:00
+date: 2024-10-26T01:41:00+09:00
 slug: "bunfree-fukuoka-10-after"
 draft: false
 categories: [""]

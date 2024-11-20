@@ -1,0 +1,37 @@
+name: Hugo Build and FTP Deploy
+
+on:
+  push:
+    branches:
+      - main  # main ブランチに push されたときに実行されます
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # リポジトリをクローン
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Hugo をセットアップ
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest' # 必要な Hugo のバージョンを指定（例: '0.117.0'）
+          extended: true         # Hugo extended が必要な場合は true
+
+      # Hugo で静的サイトをビルド
+      - name: Build site with Hugo
+        run: hugo --minify -D  # ビルドコマンド（下書き記事を含める場合は -D）
+
+      # FTP デプロイを実行
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp           # FTP を使用
+          local-dir: ./public     # Hugo のデフォルトの出力ディレクトリ
+          server-dir: /public_html  # FTP サーバー上のデプロイ先ディレクトリ

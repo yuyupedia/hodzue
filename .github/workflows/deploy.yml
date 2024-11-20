@@ -33,5 +33,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp           # FTP を使用
-          local-dir: ./public     # Hugo のデフォルトの出力ディレクトリ
-          server-dir: /public_html  # FTP サーバー上のデプロイ先ディレクトリ
+          local-dir: ./public/     # Hugo のデフォルトの出力ディレクトリ
+          server-dir: /pub/  # FTP サーバー上のデプロイ先ディレクトリ

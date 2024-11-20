@@ -23,7 +23,7 @@ jobs:
 
       # Hugo で静的サイトをビルド
       - name: Build site with Hugo
-        run: hugo --minify -D  # ビルドコマンド（下書き記事を含める場合は -D）
+        run: hugo --minify  # ビルドコマンド（下書き記事を含める場合は -D）
 
       # FTP デプロイを実行
       - name: Deploy via FTP
@@ -34,4 +34,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp           # FTP を使用
           local-dir: ./public/     # Hugo のデフォルトの出力ディレクトリ
-          server-dir: /pub/  # FTP サーバー上のデプロイ先ディレクトリ
+          server-dir: /home/yuyuko  # FTP サーバー上のデプロイ先ディレクトリ

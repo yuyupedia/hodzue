@@ -13,6 +13,8 @@ jobs:
       # リポジトリをクローン
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          submodules: true
 
       # Hugo をセットアップ
       - name: Setup Hugo
@@ -34,4 +36,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp           # FTP を使用
           local-dir: ./public/     # Hugo のデフォルトの出力ディレクトリ
-          server-dir: /home/yuyuko  # FTP サーバー上のデプロイ先ディレクトリ
+          server-dir: /home/yuyuko/pub/  # FTP サーバー上のデプロイ先ディレクトリ

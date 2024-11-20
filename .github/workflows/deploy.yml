@@ -35,3 +35,5 @@ jobs:
           protocol: ftp           # FTP を使用
           local-dir: ./public/     # Hugo のデフォルトの出力ディレクトリ
           server-dir: /home/yuyuko/pub/  # FTP サーバー上のデプロイ先ディレクトリ
+          exclude: |
+            **/tegalog.xml

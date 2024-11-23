@@ -1,0 +1,11 @@
+[
+  {
+    "name": "post",
+    "modelId": "post",
+    "path": "archetypes",
+    "localization": false,
+    "type": "MD",
+    "createdBy": "user",
+    "isServerless": false
+  }
+]

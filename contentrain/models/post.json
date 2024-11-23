@@ -88,5 +88,14 @@
     "system": true,
     "defaultField": false,
     "modelId": "post"
+  },
+  {
+    "name": "date",
+    "fieldId": "date",
+    "modelId": "post",
+    "componentId": "date-time",
+    "options": {},
+    "validations": {},
+    "fieldType": "date"
   }
 ]

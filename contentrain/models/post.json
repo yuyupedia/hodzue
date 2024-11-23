@@ -97,5 +97,14 @@
     "options": {},
     "validations": {},
     "fieldType": "date"
+  },
+  {
+    "name": "title",
+    "fieldId": "title",
+    "modelId": "post",
+    "componentId": "single-line-text",
+    "options": {},
+    "validations": {},
+    "fieldType": "string"
   }
 ]

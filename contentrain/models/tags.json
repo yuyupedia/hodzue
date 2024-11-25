@@ -64,7 +64,11 @@
     "fieldId": "tag",
     "modelId": "tags",
     "componentId": "single-line-text",
-    "options": {},
+    "options": {
+      "title-field": {
+        "value": true
+      }
+    },
     "validations": {},
     "fieldType": "array"
   }

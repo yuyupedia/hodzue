@@ -1,8 +1,0 @@
-{{ range . }}
-{
-  "title": "{{ .title }}",       # APIのデータ「title」をページのタイトルにする
-  "slug": "{{ .id }}",           # APIのデータ「id」をURLの一部にする
-  "date": "{{ .date }}",           # APIのデータ「id」をURLの一部にする
-  "body": "{{ .content }}"       # APIのデータ「content」をページの中身にする
-}
-{{ end }}

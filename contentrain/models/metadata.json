@@ -7,13 +7,5 @@
     "type": "MD",
     "createdBy": "user",
     "isServerless": false
-  },
-  {
-    "name": "tags",
-    "modelId": "tags",
-    "localization": false,
-    "type": "JSON",
-    "createdBy": "user",
-    "isServerless": false
   }
 ]

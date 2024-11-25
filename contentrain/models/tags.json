@@ -58,14 +58,5 @@
     "system": true,
     "defaultField": false,
     "modelId": "tags"
-  },
-  {
-    "name": "impression",
-    "fieldId": "impression",
-    "modelId": "tags",
-    "componentId": "single-line-text",
-    "options": {},
-    "validations": {},
-    "fieldType": "string"
   }
 ]

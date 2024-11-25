@@ -94,23 +94,5 @@
     "options": {},
     "validations": {},
     "fieldType": "date"
-  },
-  {
-    "name": "tags",
-    "fieldId": "tags",
-    "modelId": "post",
-    "componentId": "one-to-one",
-    "options": {
-      "reference": {
-        "value": true,
-        "form": {
-          "reference": {
-            "value": "tags"
-          }
-        }
-      }
-    },
-    "validations": {},
-    "fieldType": "relation"
   }
 ]

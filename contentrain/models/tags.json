@@ -58,5 +58,14 @@
     "system": true,
     "defaultField": false,
     "modelId": "tags"
+  },
+  {
+    "name": "journal",
+    "fieldId": "journal",
+    "modelId": "tags",
+    "componentId": "single-line-text",
+    "options": {},
+    "validations": {},
+    "fieldType": "string"
   }
 ]

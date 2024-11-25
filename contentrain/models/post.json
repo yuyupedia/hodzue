@@ -90,15 +90,6 @@
     "modelId": "post"
   },
   {
-    "name": "date",
-    "fieldId": "date",
-    "modelId": "post",
-    "componentId": "date-time",
-    "options": {},
-    "validations": {},
-    "fieldType": "date"
-  },
-  {
     "name": "title",
     "fieldId": "title",
     "modelId": "post",

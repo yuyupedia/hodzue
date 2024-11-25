@@ -88,5 +88,14 @@
     "system": true,
     "defaultField": false,
     "modelId": "tags"
+  },
+  {
+    "name": "tags",
+    "fieldId": "tags",
+    "modelId": "tags",
+    "componentId": "single-line-text",
+    "options": {},
+    "validations": {},
+    "fieldType": "array"
   }
 ]

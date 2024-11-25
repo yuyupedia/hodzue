@@ -1,14 +1,12 @@
 [
   {
     "ID": "a0d19ea39735",
-    "createdAt": "Mon Nov 25 2024 19:45:01 GMT+0900 (日本標準時)",
-    "updatedAt": "Mon Nov 25 2024 19:45:01 GMT+0900 (日本標準時)",
-    "tag": [
-      "journal",
-      "dojin",
-      "impression"
-    ],
+    "createdAt": "2024-11-25T10:45:01.000Z",
+    "updatedAt": "2024-11-25T10:46:35.157Z",
     "status": "publish",
+    "tag": [
+      "journal"
+    ],
     "scheduled": false
   }
 ]
